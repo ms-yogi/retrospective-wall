@@ -1,2 +1,2 @@
-# newsApp
-News app using React
+# Retrospective-wall
+Retrospective wall using React
