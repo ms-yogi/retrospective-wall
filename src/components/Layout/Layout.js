@@ -13,9 +13,9 @@ const Layout = () => {
     return (
         <div className={[styles.Layout , "container"].join(' ')}>
             <div className="row">
-                {sectionList.map(item => {
+                {sectionList.map((item, index) => {
                     return (
-                        <div className="col-lg-6">
+                        <div className="col-lg-6" key={index}>
                             <Section sectionName={item}/>
                         </div>
                     )
