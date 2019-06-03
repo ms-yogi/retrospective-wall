@@ -6,7 +6,6 @@ function App() {
     <div>
       <header>
         <h1 className="text-center text-light">The RetroSpective Wall</h1>
-
         <Layout/>
       </header>
     </div>
