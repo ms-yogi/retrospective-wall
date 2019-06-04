@@ -6,13 +6,19 @@ import SectionCard from '../SectionCard/SectionCard';
 
 class Section extends Component {
     state = {
-        card: []
+        card: [],
+        // cardNumber: 0
     }
     
+    count = 0;
+    array = [];
     addCardHandler = () => {
+        this.count++;
+        this.array.push(this.count);
         this.setState({
-            card: <SectionCard />
+            card: this.array
         })
+        console.log(this.count);
     }
     
     render() {
@@ -25,7 +31,13 @@ class Section extends Component {
                         onClick={this.addCardHandler}/>
                 </h3>
 
-                {this.state.card}
+                <div style={{overflowY: 'scroll', height: '18rem', padding: '0 1rem'}}>
+                    {this.state.card.map(item => {
+                        return (
+                            <SectionCard key={item}/>
+                        )
+                    })}
+                </div>
             </div>
         )
     }
