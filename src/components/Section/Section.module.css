@@ -3,18 +3,22 @@
     color: #aaa;
     margin: 1rem 0;
     border-radius: 3px;
-    /* height: 20rem; */
 }
 
 .section h3 {
     font-size: 1.4rem;
     padding: 1rem;
-    /* position: fixed; */
 }
 
-.plus {
-    color: #F02F4C;
+.icon {
     margin: 0 10px;
+    cursor: pointer;
+}
+
+.cardContainer {
+    overflow-y: scroll;
+    height: 18rem;
+    padding: 0 1rem;
 }
 
 ::-webkit-scrollbar {

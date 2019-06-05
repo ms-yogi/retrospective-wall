@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Section.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { faPlusCircle, faTrash } from '@fortawesome/free-solid-svg-icons'
 import SectionCard from '../SectionCard/SectionCard';
 
 class Section extends Component {
@@ -18,7 +18,13 @@ class Section extends Component {
         this.setState({
             card: this.array
         })
-        console.log(this.count);
+    }
+
+    deleteHandler = () => {
+        this.setState({
+            card: []
+        })
+        this.array = [];
     }
     
     render() {
@@ -27,11 +33,18 @@ class Section extends Component {
                 <h3>{this.props.sectionName}
                     <FontAwesomeIcon 
                         icon={faPlusCircle} 
-                        className={styles.plus}
+                        className={styles.icon}
+                        style={{color: '#5fc569'}}
                         onClick={this.addCardHandler}/>
+
+                    <FontAwesomeIcon 
+                        icon={faTrash} 
+                        className={styles.icon}
+                        style={{color: '#F02F4C'}}
+                        onClick={this.deleteHandler}/>
                 </h3>
 
-                <div style={{overflowY: 'scroll', height: '18rem', padding: '0 1rem'}}>
+                <div className={styles.cardContainer}>
                     {this.state.card.map(item => {
                         return (
                             <SectionCard key={item}/>
