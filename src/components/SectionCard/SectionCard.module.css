@@ -27,8 +27,13 @@
     color: #888;
     border: none;
     user-select: none;
-    padding: 5px;
+    padding: 0 5px 5px;
 }
 textarea:focus {
     outline: none;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
 }
