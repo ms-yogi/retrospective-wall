@@ -26,6 +26,18 @@ class Section extends Component {
         })
         this.array = [];
     }
+
+    cardDeleteHandler = (i) => {
+        let tempCard = this.state.card.filter(element => {
+            if( element !== i ) {
+                return element
+            }
+        })
+
+        this.setState({
+            card: tempCard
+        })
+    }
     
     render() {
         return (
@@ -47,7 +59,7 @@ class Section extends Component {
                 <div className={styles.cardContainer}>
                     {this.state.card.map(item => {
                         return (
-                            <SectionCard key={item}/>
+                            <SectionCard key={item} onDelete={() => this.cardDeleteHandler(item)}/>
                         )
                     })}
                 </div>

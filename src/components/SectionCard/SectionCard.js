@@ -20,10 +20,6 @@ class SectionCard extends Component {
         })
     }
 
-    cardDeleteHandler = () => {
-        
-    }
-
     render() {
         return (
             <div className={["card", styles.card].join(' ')}>
@@ -31,7 +27,7 @@ class SectionCard extends Component {
                         icon={ faTimes } 
                         className={styles.close}
                         style={{color: '#ccc'}}
-                        onClick={this.cardDeleteHandler}/>
+                        onClick={this.props.onDelete}/>
                 <div className={["card-body", styles.cardBody].join(' ')}
                 onClick={this.editHandler}>
                     <textarea
